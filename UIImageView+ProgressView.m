@@ -8,6 +8,8 @@
 #import "UIImageView+ProgressView.h"
 
 #define TAG_PROGRESS_VIEW 149462
+#define YKOrangeColor [UIColor colorWithRed:255.0/255 green:90.0/255 blue:.0/255 alpha:1.0]
+
 
 @implementation UIImageView (ProgressView)
 
@@ -17,10 +19,12 @@
         if (!progressView) {
             progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
         }
-
+        
         progressView.tag = TAG_PROGRESS_VIEW;
         progressView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
-
+        
+        progressView.tintColor = YKOrangeColor;
+        
         float width = progressView.frame.size.width;
         float height = progressView.frame.size.height;
         float x = (self.frame.size.width / 2.0) - width/2;
